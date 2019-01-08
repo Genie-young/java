@@ -1,0 +1,18 @@
+package chapter6;
+
+import java.util.Date;
+import java.util.Vector;
+
+import chap7.Animal;
+
+public class wet {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Date now = new Date(); 
+		Vector v = new Vector(); 
+		Animal ani = new Animal();
+		
+	}
+
+}

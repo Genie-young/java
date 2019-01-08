@@ -1,0 +1,25 @@
+package algo;
+
+import java.util.*;
+
+public class eeee {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int input = sc.nextInt();
+		int cal[] = new int[input + 1];
+		cal[1] = cal[2] = cal[3] = 1;
+
+		for (int i = 4; i <= input; i++) {
+			int cnt = 0;
+			if (i % 3 == 0) {
+				cnt = (1 + cal[i / 3]);
+			} else if (input % 2 == 0) {
+				cnt = (1 + cal[i / 2]);
+			} else
+				cnt = (1 + cal[i - 1]);
+
+			System.out.println(cal[i]);
+		}
+		System.out.println(cal[input]);
+	}
+}

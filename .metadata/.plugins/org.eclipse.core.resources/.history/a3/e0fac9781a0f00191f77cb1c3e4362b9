@@ -1,0 +1,13 @@
+//package algo;
+//import java.util.*;
+//public class Maain {
+//
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		ArrayList<ArrayList<NodeInfo>> gr = new <ArrayList<NodeInfo>> ArrayList(); 
+//	int ver1, we; 
+//	for(int i=0;i<5;i++)
+//		gr.add(new ArrayList<NodeInfo>());
+//	
+//	gr.get(0).add(new NodeInfo(ver1, we));
+//}

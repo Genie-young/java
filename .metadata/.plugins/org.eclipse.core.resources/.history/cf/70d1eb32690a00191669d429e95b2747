@@ -1,0 +1,67 @@
+package algo;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		
+		Graph graph = new Graph(); 
+		Scanner sc = new Scanner(System.in);
+		//queue 선언
+		graph.N = sc.nextInt();
+		graph.M = sc.nextInt();
+		graph.S = sc.nextInt();
+		graph.status = new int[graph.N];
+		for(int i = 0;i<graph.N;i++)
+			graph.graph.add(new ArrayList<>()); 
+		
+		for(int i=0;i<graph.M;i++)
+		{
+			int ver1,ver2; 
+			ver1 = sc.nextInt();
+			ver2 = sc.nextInt();
+			graph.graph.get(ver1).add(ver2); 
+		}
+		graph = DFS(graph);
+		
+		
+		
+
+	}
+	public static Graph DFS(Graph graph)
+	{
+		
+		int start = graph.S ;
+			while(! graph.graph.get(start).isEmpty()) 
+			{
+				int ver2 = graph.graph.get(start).get(0);
+				if(graph.status[ver2]==0)
+				{
+					graph.status[ver2] = 1; 
+					graph.graph.get(start).remove(0);
+					for(int i=0;i<graph.graph.get(ver2).size();i++)
+					{
+						if(graph.graph.get(ver2).get(i) ==ver2 )
+							graph.graph.get(ver2).remove(i);
+					}
+					System.out.println(ver2);
+					graph = DFS(graph);
+				}
+					
+			}
+			return graph;
+	}
+
+}
+/*
+5 7 1
+1 2
+1 4
+5 1
+3 5
+4 3
+3 1
+2 3
+*/

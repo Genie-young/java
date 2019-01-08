@@ -1,0 +1,20 @@
+import java.util.HashSet;
+
+public class LottoSetTest {
+
+	public static void main(String[] args) {
+			
+		//1-45 난수
+		HashSet<Integer> lotto = new HashSet<Integer>(6);
+		
+		while(lotto.size() != 6)
+		{
+			int ran = (int)(Math.random()*45)+1;
+			System.out.println(ran +":"+ lotto.size());
+			lotto.add(ran);
+			
+		}
+		
+	}
+
+}

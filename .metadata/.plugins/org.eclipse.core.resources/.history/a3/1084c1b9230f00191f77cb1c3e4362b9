@@ -1,0 +1,34 @@
+package algo;
+import java.util.*;
+
+public class eeee {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int input = sc.nextInt();
+		int cal[] = new int[input + 1];
+		int tinput;
+		cal[1] = cal[2] = cal[3] = 1;
+        
+		for (int i = 4; i <= input; i++) {
+			int temp = 0;
+			int cnt = Integer.MAX_VALUE;
+			
+			for (int j = 0; j < i; j++) {
+
+				tinput = i - j;
+				temp = j;
+				if (tinput % 3 == 0) {
+					temp += (1 + cal[tinput / 3]);
+				} else if (input % 2 == 0) {
+					temp += 1+ cal[tinput / 2];
+				} else temp += 1+cal[tinput-1]; 
+				
+				if(temp < cnt)
+					cnt = temp; 
+			}
+			cal[i] = cnt;
+			System.out.println( i " = " cal[i]);
+		}
+		System.out.println(cal[input]);
+	}
+}

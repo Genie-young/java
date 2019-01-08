@@ -1,0 +1,23 @@
+package chap7;
+class Math{
+	public int abs(int data)
+	{
+		if(data>0) return data*-1;
+		else return data;
+	}
+}
+class MyMath extends Math{
+	void power() {
+		System.out.println("제곱을 구합니다.");
+	}
+}
+public class MathTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyMath m = new MyMath();
+		m.power();
+		System.out.println(m.abs(10));
+	}
+
+}

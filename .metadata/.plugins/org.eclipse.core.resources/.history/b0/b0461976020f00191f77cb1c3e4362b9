@@ -1,0 +1,32 @@
+package chapter6;
+
+
+//2-2> 교육생 클래스의 객체를 생성하여 stu
+// 라는 이름의 변수로 참조하도록 합니다.
+//이 때 2-1 입력 5개 변수를 이름, 소속, 과정명,
+//교육비, 부가금 변수값으로 초기화합니다.
+//==== 이름 ~ 부가금 입력 초기화
+
+
+public class StudentExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student stu = new Student(args[0], args[1],args[2],Integer.parseInt(args[3]),Integer.parseInt(args[4]));
+		double refunds = stu.ReturnRefunds();
+		if(refunds == -1)
+			System.out.println("\"잘못 입력되었습니다.\"");
+		else 
+		{
+//			stu 내의 이름, 소속, 과정명, 교육비, 부가금, 환급금을 출력합니다. 
+			System.out.println("이름 = "+stu.name );
+			System.out.println("소속 = "+stu.dept);
+			System.out.println("과정명 = "+stu.course);
+			System.out.println("교육비 = "+stu.educationFee+"원");
+			System.out.println("부가금 = "+stu.surcharge+"원");
+			System.out.println("환급금 = "+(int)stu.refunds+"원");
+		}
+			
+	}
+
+}

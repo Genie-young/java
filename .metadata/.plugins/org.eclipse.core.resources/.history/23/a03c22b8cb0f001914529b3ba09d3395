@@ -1,0 +1,51 @@
+package chap7;
+
+abstract class Shape{
+	abstract void area();
+	abstract void circum();
+}
+class Rectangle extends Shape{
+
+	int width;
+	int height;
+	Rectangle(int width,int height) {
+		this.width = width;
+		this.height = height; 
+	}
+	@Override
+	void area() { 
+		System.out.println(width * height);
+	}
+	@Override
+	void circum() {
+		System.out.println((width+height)*2);
+	}
+	
+}
+class Circle extends Shape{
+
+	int r;
+	Circle(int r) {
+		this.r = r; 
+	}
+	@Override
+	void area() {
+		
+		System.out.println(Math.PI*r*r);
+	}
+
+	@Override
+	void circum() {
+		System.out.println(2*Math.PI*r);
+	}
+	
+}
+
+public class ShapeTest {
+public static void main(String[] args) {
+	if(args.length == 3 && args[1].equals("rec"))
+		Rectangle sh = new Rectangle(Integer.parseInt(args[1]),Integer.parseInt(args[2])); 
+		
+	else if()
+}
+}

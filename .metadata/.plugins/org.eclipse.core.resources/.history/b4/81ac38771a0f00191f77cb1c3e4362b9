@@ -1,0 +1,11 @@
+package algo;
+
+public class VertexStatus{
+	
+	int bag[] = null;
+	int weight[] = null; 
+	public void VertexStatus(int N)	{
+		this.bag = new int[N];
+		this.weight = new int[N];
+	}
+}

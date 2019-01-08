@@ -1,0 +1,29 @@
+package chapter6;
+
+class PersonTest {
+
+	String name;
+	int age; 
+	String na; 
+	
+	public PersonTest(String name, int age, String na) {
+		//super();
+		this.name = name;
+		this.age = age;
+		this.na = na;
+	}
+}
+
+public class Person{
+
+	public static void main(String[] args) {
+		PersonTest p1= new PersonTest("홍길동",29,"대한민국");
+		System.out.println("p1객체의 이름은 " + p1.name +"이고 나이는 "+p1.age + " 이며 국적은 " + p1.na + " 입니다.");
+		
+		PersonTest p2= new PersonTest("박보검",23,"대한민국");
+		System.out.println("p1객체의 이름은 " + p2.name +"이고 나이는 "+p2.age + " 이며 국적은 " + p2.na + " 입니다.");
+		
+		
+
+	}
+}

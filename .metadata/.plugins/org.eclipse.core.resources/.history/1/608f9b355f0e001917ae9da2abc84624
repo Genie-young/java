@@ -1,0 +1,101 @@
+package algo;
+
+import java.util.*;
+
+public class tomato {
+	static Queue<Integer> queue = new PriorityQueue<Integer>();
+	static int box[][];
+	static int cnt = 0;
+	static int tomatonum = 0;
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N, M;
+
+		M = sc.nextInt();
+		N = sc.nextInt();
+		box = new int[N][M];
+		tomatonum = N * M;
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				box[i][j] = sc.nextInt();
+				if (box[i][j] == -1) {
+					box[i][j] = 1; 
+					tomatonum--;
+				} 
+				else if (box[i][j] == 1) {
+					queue.add(i * M + j);
+					cnt++;
+				} 
+			}
+		} // 초기화
+
+		int cnt2 = 1;
+		for (int day = 0;; day++) {
+
+			// 토마토가 모두 익었으면 날짜를 출력하고 break;
+			// 토마토가 더이상 익을 수 없으면 -1 출력하고 break;
+			if (cnt == tomatonum) {
+				System.out.println(day + "\n");
+				break;
+			} else if (cnt2 == 0) {
+				System.out.println("-1");
+				break;
+			}
+			int size = queue.size(); 
+			System.out.println(size+"\n");
+			cnt2 = 0;
+			for(int z=0;z < size;z++)
+			{
+				int place = queue.remove();
+				int i = place / M;
+				int j = place % M;
+				int temp = input_queue(i, j, N,M);
+				if (temp == 1)
+					cnt2 = 1;
+			}
+		
+		}
+
+	}
+
+	static public int input_queue(int i, int j, int N, int M) {
+		int cnt1 = 0;
+
+		if (i > 0) {
+			if (box[i - 1][j] == 0) {
+				box[i - 1][j] =1;
+				queue.add((i - 1) * M + j);
+				cnt1 = 1;
+				cnt++;
+			}
+		}
+		if (i < N - 1) {
+			if (box[i + 1][j] == 0) {
+				box[i + 1][j] = 1;
+				queue.add((i + 1) * M + j);
+				cnt1 = 1;
+				cnt++;
+			}
+		}
+		if (j > 0) {
+			if (box[i][j - 1] == 0) {
+				box[i][j - 1] = 1;
+				queue.add(i * M + j - 1);
+				cnt1 = 1;
+				cnt++;
+			}
+		}
+		if (j < M - 1) {
+			if (box[i][j + 1] == 0) {
+				box[i][j + 1] = 1;
+				queue.add(i * M + j + 1);
+				cnt1 = 1;
+				cnt++;
+			}
+		}
+		return cnt1;
+
+	}
+
+}

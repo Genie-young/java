@@ -1,0 +1,13 @@
+package chap7;
+
+import multi.Animal;
+
+public class Dog extends Animal{
+
+	@Override
+	public void Sound()
+	{
+		System.out.println("멍멍");
+	}
+
+}

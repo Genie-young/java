@@ -1,0 +1,62 @@
+package multi;
+
+//
+//1. 교육생 클래스에는 
+//<필드변수>
+//이름, 소속, 과정명, 교육비, 부가금, 환급금을 
+//나타내는 변수를 정의합니다.
+//<사용자 생성자>
+//5개 매개변수 선언 : 
+//이름, 소속, 과정명, 교육비, 부가금
+//변수값으로 초기화
+public class Student {
+
+	String name;
+	String dept;
+	String course;
+	int educationFee;
+	int surcharge;
+	double refunds;
+
+	Student(String name, String dept, String course, int educationFee, int surcharge) {
+		this.name=name;
+		this.dept= dept;
+		this.course = course;
+		this.educationFee= educationFee;
+		this.surcharge = surcharge;
+	}
+	
+//	2-3>  환금급을 계산하자
+//
+//	  - 환급금은 
+//	   과정명이 "자바프로그래밍" 이면
+//	   입력한 교육비의 25% + 부가금 이고,
+//	   
+//	   과정명이 "JDBC프로그래밍" 이면
+//	   입력한 교육비의 20% + 부가금 이고,
+//	   
+//	   과정명이 "JSP프로그래밍" 이면
+//	   입력한 교육비의 15% + 부가금 으로        
+//	   계산하여 초기화합니다.
+//
+//	   그밖의 과정명은 
+//	   "잘못 입력되었습니다"는 에러 메시지를 출력합니다.
+//
+//	 - 에러 메시지 출력의 경우가 아니면 
+//	stu 내의 이름, 소속, 과정명, 교육비, 부가금, 환급금을 출력합니다. 
+	
+	double ReturnRefunds()
+	{
+		if(course.equals("자바프로그래밍"))
+			refunds = educationFee*0.25 +surcharge;
+		else if(course.equals("JDBC프로그래밍"))
+			refunds = educationFee*0.2 +surcharge;
+		else if(course.equals("JSP프로그래밍"))
+			refunds = educationFee*0.15 +surcharge;
+		else
+			refunds = -1; 
+		return refunds;
+	}
+
+
+}

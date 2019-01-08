@@ -1,0 +1,25 @@
+package chap4;
+
+public class ScoreTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int day = 31;
+
+		switch (day) {
+		case 28:
+			System.out.println("2월은 " + day + "일까지 존재합니다.");
+			break;
+		case 30:
+			System.out.println("4,6,9,11월은 " + day + "일까지 존재합니다.");
+			break;
+		case 31:
+			System.out.println("1,3,5,7,8,10,12월은 " + day + "일까지 존재합니다.");
+			break;
+		default:
+			System.out.println("해당 월은 존재하지 않습니다.");
+			break;
+		}
+	}
+
+}

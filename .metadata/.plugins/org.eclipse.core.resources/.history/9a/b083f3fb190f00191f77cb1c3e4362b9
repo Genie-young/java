@@ -1,0 +1,33 @@
+package chap7;
+
+import multi.Animal;
+
+public class Example {
+
+	public static void main(String[] args) {
+		Dog dog = new Dog();
+		Cat cat = new Cat();
+		int i=200;
+		String j = "python";
+		j = change(i,j);
+		System.out.println(i + j);
+		Animal animal = null;
+		animal = new Dog();
+		animal.Sound();
+		animal = new Cat();
+		animal.Sound();
+		
+		animalSound(new Dog());
+	}
+
+	public static void animalSound(Animal animal)
+	{
+		animal.Sound();
+	}
+	public static String change(int i, String str)
+	{
+		i=100;
+		str = "java";
+		return str; 
+	}
+}

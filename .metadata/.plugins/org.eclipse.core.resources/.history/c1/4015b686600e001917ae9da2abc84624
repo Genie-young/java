@@ -1,0 +1,15 @@
+package chapter6;
+
+public class EmployeeTest {
+
+	public static void main(String[] args) {
+		Employee em = new Employee(); 
+		
+		em.id = 1234;
+		em.name = "홍길동";
+		em.dept = "인사부";
+		em.title = "사원";
+		
+		
+}
+}

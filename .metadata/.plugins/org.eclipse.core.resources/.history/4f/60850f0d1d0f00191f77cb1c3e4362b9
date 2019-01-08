@@ -1,0 +1,28 @@
+package algo;
+
+import java.util.*;
+
+//1.X가 3으로 나누어 떨어지면, 3으로 나눈다.
+//2.X가 2로 나누어 떨어지면, 2로 나눈다.
+//3.1을 뺀다.
+public class eeee {
+	// A+B, 둘째 줄에 A-B, 셋째 줄에 A*B, 넷째 줄에 A/B, 다섯째 줄에 A%B
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int input = sc.nextInt();
+		for (int i = 0;; i++) {
+			if (input == 1) {
+				System.out.println(i);
+				break;
+			}
+			if (input % 3 == 0)
+				input = input / 3;
+			else if (input % 2 == 0)
+				input = input / 2;
+			else
+				input -= 1;
+		}
+	}
+
+}

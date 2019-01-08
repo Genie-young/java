@@ -1,0 +1,11 @@
+
+public class TEstTESt {
+
+	public static void main(String[] args) {
+		A ac = new test();
+		test ax = new test();
+		ax = (test)(ac);  
+
+	}
+
+}

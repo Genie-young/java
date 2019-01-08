@@ -1,0 +1,39 @@
+package algo;
+
+import java.util.Scanner;
+
+//6
+//10
+//20
+//15
+//25
+//10
+//20
+public class ddddd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int stage[] = new int[N];
+		int weight[] = new int[N];
+
+		for (int i = 0; i < N; i++) {
+			stage[i] = sc.nextInt();
+			weight[i] = Integer.MAX_VALUE;
+		}
+		weight[0] = stage[0];
+
+		for (int i = 1; i < N - 1; i++) {
+			int min;
+			if (weight[i] + stage[i + 1] < weight[i + 1])
+				weight[i + 1] = weight[i] + stage[i + 1];
+			if (i < N - 2) {
+				if (weight[i] + stage[i + 2] < weight[i + 2])
+					weight[i + 2] = weight[i] + stage[i + 2];
+			}
+		}
+		System.out.println(weight[N - 1]);
+	}
+
+}

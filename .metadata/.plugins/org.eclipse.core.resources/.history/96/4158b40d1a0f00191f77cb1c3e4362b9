@@ -1,0 +1,9 @@
+package chap7;
+
+public abstract class Animal {
+
+		public String sound; 
+		public void Animal(String sound){
+			this.sound = sound; 		}
+		public abstract void Sound(); 
+}

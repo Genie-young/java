@@ -1,0 +1,13 @@
+package chapter6;
+
+public class Employee {
+	int id; 
+	String name;
+	String dept;
+	String title;
+	Employee(int i)
+	{
+		id =i;
+	}
+		
+}
